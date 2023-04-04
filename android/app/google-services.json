@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "194164134513",
+    "project_id": "plant-sensors",
+    "storage_bucket": "plant-sensors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194164134513:android:84b8f0b550d59eb90d81d0",
+        "android_client_info": {
+          "package_name": "com.project.plantsensor.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194164134513-8b6e3tp42kakmpirs8kf2u8h6mhho9e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV8T-h1j6GiiuuWej1kdIlw9brDU6IV0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194164134513-8b6e3tp42kakmpirs8kf2u8h6mhho9e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

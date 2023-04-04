@@ -1,4 +1,4 @@
-package com.example.boilerplate_flutter
+package com.project.plantsensor
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,4 +1,4 @@
-# boilerplate_flutter
+# plant_sensors
 
 A new Flutter project.
 

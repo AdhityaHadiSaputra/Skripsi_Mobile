@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.boilerplate_flutter">
+    package="com.project.plantsensor">
    <application
         android:label="Plant Sensors"
         android:name="${applicationName}"

@@ -1,6 +1,6 @@
 {
-    "name": "boilerplate_flutter",
-    "short_name": "boilerplate_flutter",
+    "name": "plant-sensors",
+    "short_name": "plant-sensors",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
