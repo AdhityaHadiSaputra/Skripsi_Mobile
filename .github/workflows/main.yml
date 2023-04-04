@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
       - run: flutter pub get
       - run: flutter build  apk --obfuscate --split-debug-info=./split-debug-info-development  --split-per-abi  --flavor development -t lib/main_dev.dart
       - uses: actions/upload-artifact@v1
