@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:194164134513:android:84b8f0b550d59eb90d81d0",
         "android_client_info": {
-          "package_name": "com.project.plantsensor.dev"
+          "package_name": "com.project.plantsensor"
         }
       },
       "oauth_client": [

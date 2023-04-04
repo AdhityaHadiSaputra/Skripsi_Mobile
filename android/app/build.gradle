@@ -67,7 +67,6 @@ android {
 
         development {
             dimension "app"
-            applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
             manifestPlaceholders = [
                 appName  : "Plant Sensors Dev"
