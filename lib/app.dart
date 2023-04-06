@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'component/component.dart';
 import 'component/route/routers.gr.dart';
 
 class App extends StatelessWidget {
@@ -23,7 +22,6 @@ class App extends StatelessWidget {
       builder: (context, child) => MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
-        theme: theme(context),
       ),
     );
   }
