@@ -1,4 +1,6 @@
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get_it/get_it.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 import '../data/remote/remote.dart';
 
@@ -19,5 +21,16 @@ class Injector {
   void _onRegisterService() {
     getIt.registerLazySingleton<BaseService>(() => BaseService.create());
     getIt.registerLazySingleton<FirebaseService>(() => FirebaseService());
+    getIt.registerLazySingleton<FlutterLocalNotificationsPlugin>(
+        () => FlutterLocalNotificationsPlugin());
+    getIt.registerSingletonAsync<NotificationService>(() async {
+      NotificationService notificationService = NotificationServiceImpl(
+        getIt(),
+      );
+      tz.initializeTimeZones();
+      await notificationService.initnotification();
+      notificationService.requestPermission();
+      return notificationService;
+    });
   }
 }
