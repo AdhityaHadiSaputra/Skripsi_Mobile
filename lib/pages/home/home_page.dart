@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
   static const route = AutoRoute(
     path: '/home',
     page: HomePage,
-    initial: true,
   );
 
   @override

@@ -22,12 +22,18 @@ class AppRouter extends _i2.RootStackRouter {
 
   @override
   final Map<String, _i2.PageFactory> pagesMap = {
+    InitialRoute.name: (routeData) {
+      return _i2.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i1.InitialPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.HomePage(),
       );
-    }
+    },
   };
 
   @override
@@ -35,14 +41,30 @@ class AppRouter extends _i2.RootStackRouter {
         _i2.RouteConfig(
           '/#redirect',
           path: '/',
-          redirectTo: '/home',
+          redirectTo: '/splash',
           fullMatch: true,
+        ),
+        _i2.RouteConfig(
+          InitialRoute.name,
+          path: '/splash',
         ),
         _i2.RouteConfig(
           HomeRoute.name,
           path: '/home',
         ),
       ];
+}
+
+/// generated route for
+/// [_i1.InitialPage]
+class InitialRoute extends _i2.PageRouteInfo<void> {
+  const InitialRoute()
+      : super(
+          InitialRoute.name,
+          path: '/splash',
+        );
+
+  static const String name = 'InitialRoute';
 }
 
 /// generated route for

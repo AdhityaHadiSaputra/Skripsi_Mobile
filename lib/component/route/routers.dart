@@ -5,6 +5,7 @@ import '../../pages/pages.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
+    InitialPage.route,
     HomePage.route,
   ],
 )

@@ -8,35 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:928476412840:android:17f170f438ef76889cbb9d",
-        "android_client_info": {
-          "package_name": "com.example.coba"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "928476412840-7ahfecrlje62tvh4m5ig80ldgcr7e80k.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBobFBbsHHAZfnREodkt6w9Ji0yYVqFM-E"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "928476412840-7ahfecrlje62tvh4m5ig80ldgcr7e80k.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:928476412840:android:f7e8a68e6161059b9cbb9d",
         "android_client_info": {
           "package_name": "com.project.plantsensor"
