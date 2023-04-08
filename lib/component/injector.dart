@@ -34,6 +34,12 @@ class Injector {
       notificationService.requestPermission();
       return notificationService;
     });
+    getIt.registerSingletonAsync<FirebaseMessagingService>(() async {
+      FirebaseMessagingServiceImpl firebaseMessagingServiceImpl =
+          FirebaseMessagingServiceImpl();
+      await firebaseMessagingServiceImpl.registerNotification();
+      return firebaseMessagingServiceImpl;
+    }, dependsOn: [NotificationService]);
   }
 
   void _onRegisterRepository() {

@@ -37,9 +37,11 @@ dependencies:
   dio: ^4.0.6
   firebase_core: ^2.9.0
   firebase_database: ^10.1.0
+  firebase_messaging: ^14.4.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
+  flutter_local_notifications: ^13.0.0
   flutter_native_splash: ^2.2.6
   flutter_screenutil: ^5.7.0
   fluttertoast: ^8.2.1
@@ -50,10 +52,9 @@ dependencies:
   intl: ^0.18.0
   json_annotation: ^4.5.0
   pretty_dio_logger: ^1.1.1
+  provider: ^6.0.3
   shimmer: ^2.0.0
   timeago: ^3.2.2
-  provider: ^6.0.3
-  flutter_local_notifications: ^13.0.0
   timezone: ^0.9.1
 
 dev_dependencies:
@@ -78,11 +79,10 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/icons/
-   - assets/images/
-   - assets/app/
+    - assets/icons/
+    - assets/images/
+    - assets/app/
   #   - images/a_dot_ham.jpeg
-
 # Enable if want to used
 # flutter_icons:
 #   android: "launcher_icon"
@@ -104,8 +104,6 @@ flutter:
 #   web: false
 #   android_gravity: center
 #   fullscreen: true
-
-
 # How to use : flutter pub run flutter_native_splash:create
 flutter_native_splash:
   color: "#FFFFFF"

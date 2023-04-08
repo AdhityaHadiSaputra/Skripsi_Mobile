@@ -7,11 +7,13 @@ class InfoTile extends StatelessWidget {
   final Image icon;
   final String name;
   final String value;
+  final bool isEnabled;
   const InfoTile({
     super.key,
     required this.icon,
     required this.name,
     required this.value,
+    this.isEnabled = false,
   });
 
   @override
@@ -31,7 +33,11 @@ class InfoTile extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: icon,
             ),
-            InfoText(name: name, value: value),
+            InfoText(
+              name: name,
+              value: value,
+              isEnabled: isEnabled,
+            ),
           ],
         ),
       ),
