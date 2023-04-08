@@ -1,0 +1,8 @@
+# https://pub.dev/packages/json_serializable#build-configuration
+
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          field_rename: snake

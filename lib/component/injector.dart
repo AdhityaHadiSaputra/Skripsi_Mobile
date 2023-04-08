@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 import '../data/remote/remote.dart';
+import '../repositories/repositories.dart';
 
 final getIt = GetIt.instance;
 
@@ -16,6 +17,7 @@ class Injector {
 
   void onStartRegister() {
     _onRegisterService();
+    _onRegisterRepository();
   }
 
   void _onRegisterService() {
@@ -32,5 +34,11 @@ class Injector {
       notificationService.requestPermission();
       return notificationService;
     });
+  }
+
+  void _onRegisterRepository() {
+    getIt.registerLazySingleton<FirebaseRepository>(
+      () => FirebaseRepository.create(),
+    );
   }
 }

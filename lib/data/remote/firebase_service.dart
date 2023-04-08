@@ -1,17 +1,30 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:async';
+
 import 'package:firebase_database/firebase_database.dart';
+
+import '../../models/models.dart';
 
 class FirebaseService {
   final DatabaseReference _databaseReference =
       FirebaseDatabase.instance.reference();
 
-  Stream<DatabaseEvent> getData() {
-    return _databaseReference.child('data').onValue;
+  final completer = Completer<Plants>();
+
+  Stream<Plants> getData() {
+    final transformer = StreamTransformer<DatabaseEvent, Plants>.fromHandlers(
+        handleData: (event, sink) {
+      final dataSnapshot = event.snapshot.value as Map;
+      final plants = Plants.fromJson(dataSnapshot.cast<String, dynamic>());
+      sink.add(plants);
+    });
+
+    return _databaseReference.child('test').onValue.transform(transformer);
   }
 
   Future<void> addData(String data) async {
-    final newPostRef = _databaseReference.child('data').push();
+    final newPostRef = _databaseReference.child('test').push();
     await newPostRef.set(data);
   }
 }

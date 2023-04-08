@@ -52,6 +52,7 @@ dependencies:
   pretty_dio_logger: ^1.1.1
   shimmer: ^2.0.0
   timeago: ^3.2.2
+  provider: ^6.0.3
   flutter_local_notifications: ^13.0.0
   timezone: ^0.9.1
 

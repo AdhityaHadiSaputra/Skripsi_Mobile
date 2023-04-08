@@ -1,15 +1,16 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:plant_sensors/extensions/extension.dart';
 import 'package:timezone/timezone.dart';
 
-import '../../extensions/extension.dart';
-import '../../models/received_notification.dart';
-import '../../models/schedule_notification.dart';
+import '../../models/models.dart';
 
 abstract class NotificationService {
   Future<void> initnotification();
   Future<void> requestPermission();
+
   /// How to use show notification
   /// ``` dart
   /// NotificationService service = getIt.get<NotificationService>();
@@ -25,8 +26,9 @@ abstract class NotificationService {
   /// ```
   Future<void> showNotification(
       {required ReceivedNotification receivedNotification});
+
   /// [How to use schedule notification]
-  /// 
+  ///
   /// ``` dart
   /// NotificationService service = getIt.get<NotificationService>();
   /// ScheduleNotification scheduleNotification =
@@ -55,7 +57,6 @@ class NotificationServiceImpl extends NotificationService {
 
   @override
   Future<void> initnotification() async {
-
     //init settings for android
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('main_logo');
@@ -133,11 +134,11 @@ class NotificationServiceImpl extends NotificationService {
       iOS: iOSPlatformChannelSpecifics,
     );
     await flutterLocalNotificationsPlugin.show(
-      receivedNotification?.id ?? 0,
-      receivedNotification?.title,
-      receivedNotification?.body,
+      receivedNotification.id,
+      receivedNotification.title,
+      receivedNotification.body,
       platformChannelSpecifics,
-      payload: receivedNotification?.payload,
+      payload: receivedNotification.payload,
     );
   }
 
@@ -177,7 +178,8 @@ class NotificationServiceImpl extends NotificationService {
       androidAllowWhileIdle:
           true, // To show notification even when the app is closed
     );
-    print(
-        "Scheduled Notification Success, notification will show on ${scheduleNotification.scheduledTime.dayMonthYearHourMinuteDate()}");
+    debugPrint(
+      "Scheduled Notification Success, notification will show on ${scheduleNotification.scheduledTime.dayMonthYearHourMinuteDate()}",
+    );
   }
 }
