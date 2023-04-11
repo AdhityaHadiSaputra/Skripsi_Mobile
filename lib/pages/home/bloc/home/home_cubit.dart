@@ -37,28 +37,30 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> _handleDataToPushNotification(Plants event) async {
     if (event.fan.isNotNull) {
       _checkCondition(
-        currentCondition: event.fan!,
+        currentCondition: event.fan ?? false,
         latestCondition: latestPlants.fan ?? false,
         title: 'Fan',
-        text: 'Current temperature is ${event.fan! ? "HIGH" : "LOW"}',
+        text: 'Current temperature is ${event.fan ?? false ? "LOW" : "HIGH"}',
       );
     }
 
     if (event.waterPump.isNotNull) {
       _checkCondition(
-        currentCondition: event.waterPump!,
+        currentCondition: event.waterPump ?? false,
         latestCondition: latestPlants.waterPump ?? false,
         title: 'Water Pump',
-        text: 'Current Moisture is ${event.waterPump! ? "HIGH" : "LOW"}',
+        text:
+            'Current Moisture is ${event.waterPump ?? false ? "HIGH" : "LOW"}',
       );
     }
 
     if (event.nutritionPump.isNotNull) {
       _checkCondition(
-        currentCondition: event.nutritionPump!,
+        currentCondition: event.nutritionPump ?? false,
         latestCondition: latestPlants.nutritionPump ?? false,
         title: 'Nutrition Pump',
-        text: 'Current Nutrition is ${event.nutritionPump! ? "HIGH" : "LOW"}',
+        text:
+            'Current Nutrition is ${event.nutritionPump ?? false ? "HIGH" : "LOW"}',
       );
     }
   }
@@ -76,7 +78,7 @@ class HomeCubit extends Cubit<HomeState> {
     );
     if (currentCondition == latestCondition) return;
     receivedNotification = receivedNotification.copyWith(
-      title: '$title ${latestCondition ? "ON" : "OFF"}',
+      title: '$title ${latestCondition ? "OFF" : "ON"}',
       body: '',
     );
     await pushNotification(receivedNotification);

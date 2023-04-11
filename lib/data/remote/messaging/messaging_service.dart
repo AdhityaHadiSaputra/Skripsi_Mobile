@@ -3,22 +3,20 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import '../../component/injector.dart';
-import 'remote.dart';
-import '../../models/received_notification/received_notification.dart';
 
-abstract class FirebaseMessagingService {
-  Future<void> registerNotification();
-  Future<String?> getToken();
-  Future<void> pushNotification(ReceivedNotification receivedNotification);
-}
+import '../../../component/injector.dart';
+import '../../../component/keys.dart';
+import '../../../models/models.dart';
+import '../remote.dart';
 
 class FirebaseMessagingServiceImpl extends FirebaseMessagingService {
+  Dio client = getIt.get<BaseService>().dio;
+  final BaseNotificationService _notificationService =
+      getIt.get<BaseNotificationService>();
+
   static const int idMessage = 0;
   static final FirebaseMessaging _firebaseMessaging =
       FirebaseMessaging.instance;
-  final NotificationService _notificationService =
-      getIt.get<NotificationService>();
 
   @override
   Future<void> registerNotification() async {
@@ -85,7 +83,7 @@ class FirebaseMessagingServiceImpl extends FirebaseMessagingService {
   Future<void> pushNotification(
       ReceivedNotification receivedNotification) async {
     final String? fcmToken = await getToken();
-    var url = 'https://fcm.googleapis.com/fcm/send';
+    var url = Keys.postPushNotifUrl;
     var request = {
       "notification": {
         "title": receivedNotification.title,
@@ -96,7 +94,6 @@ class FirebaseMessagingServiceImpl extends FirebaseMessagingService {
       "priority": "high",
       "to": fcmToken,
     };
-    Dio client = getIt.get<BaseService>().dio;
     await client.post(url, data: json.encode(request));
   }
 }

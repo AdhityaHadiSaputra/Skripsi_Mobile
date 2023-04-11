@@ -51,14 +51,14 @@ class Content extends StatelessWidget {
           children: [
             InfoTile(
               icon: Assets.icons.iconDrop.image(height: 40, width: 40),
-              name: "pompa air",
+              name: "Water Pump",
               value: plants.waterPump.toString().toCapitalized(),
               isEnabled: plants.waterPump ?? false,
             ),
             26.boxWidth,
             InfoTile(
               icon: Assets.icons.iconPlant.image(height: 40, width: 40),
-              name: "pompa nutrisi",
+              name: "Nutrition Pump",
               value: plants.nutritionPump.toString().toCapitalized(),
               isEnabled: plants.nutritionPump ?? false,
             ),

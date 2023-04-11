@@ -18,18 +18,16 @@ class Injector {
   void onStartRegister() {
     _onRegisterService();
     _onRegisterRepository();
+    _onRegisterPlugin();
   }
 
   void _onRegisterService() {
     getIt.registerLazySingleton<BaseService>(() => BaseService.create());
-    getIt.registerLazySingleton<FirebaseService>(() => FirebaseService());
-    getIt.registerLazySingleton<FlutterLocalNotificationsPlugin>(
-        () => FlutterLocalNotificationsPlugin());
-    getIt.registerSingletonAsync<NotificationService>(() async {
-      NotificationService notificationService = NotificationServiceImpl(
-        getIt(),
-      );
-      tz.initializeTimeZones();
+    getIt.registerLazySingleton<RealTimeFirebaseService>(
+        () => RealTimeFirebaseService());
+    getIt.registerSingletonAsync<BaseNotificationService>(() async {
+      BaseNotificationService notificationService =
+          NotificationServiceImpl(getIt());
       await notificationService.initnotification();
       notificationService.requestPermission();
       return notificationService;
@@ -39,12 +37,19 @@ class Injector {
           FirebaseMessagingServiceImpl();
       await firebaseMessagingServiceImpl.registerNotification();
       return firebaseMessagingServiceImpl;
-    }, dependsOn: [NotificationService]);
+    }, dependsOn: [BaseNotificationService]);
   }
 
   void _onRegisterRepository() {
     getIt.registerLazySingleton<FirebaseRepository>(
       () => FirebaseRepository.create(),
     );
+  }
+
+  void _onRegisterPlugin() {
+    getIt.registerLazySingleton<FlutterLocalNotificationsPlugin>(
+      () => FlutterLocalNotificationsPlugin(),
+    );
+    tz.initializeTimeZones();
   }
 }

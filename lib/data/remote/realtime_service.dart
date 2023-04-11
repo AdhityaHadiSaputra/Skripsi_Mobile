@@ -6,7 +6,7 @@ import 'package:firebase_database/firebase_database.dart';
 
 import '../../models/models.dart';
 
-class FirebaseService {
+class RealTimeFirebaseService {
   final DatabaseReference _databaseReference =
       FirebaseDatabase.instance.reference();
 
@@ -21,10 +21,5 @@ class FirebaseService {
     });
 
     return _databaseReference.child('test').onValue.transform(transformer);
-  }
-
-  Future<void> addData(String data) async {
-    final newPostRef = _databaseReference.child('test').push();
-    await newPostRef.set(data);
   }
 }

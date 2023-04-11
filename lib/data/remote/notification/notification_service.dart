@@ -5,48 +5,10 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:plant_sensors/extensions/extension.dart';
 import 'package:timezone/timezone.dart';
 
-import '../../models/models.dart';
+import '../../../models/models.dart';
+import 'base_notification_service.dart';
 
-abstract class NotificationService {
-  Future<void> initnotification();
-  Future<void> requestPermission();
-
-  /// How to use show notification
-  /// ``` dart
-  /// NotificationService service = getIt.get<NotificationService>();
-  /// const ReceivedNotification receivedNotification =
-  /// ReceivedNotification(
-  ///   id: 0,
-  ///   title: 'ini titlenyaa',
-  ///   body: 'ini bodynya',
-  ///   payload: 'ini payloadnya',
-  /// );
-  /// service.showNotification(
-  ///     receivedNotification: receivedNotification);
-  /// ```
-  Future<void> showNotification(
-      {required ReceivedNotification receivedNotification});
-
-  /// [How to use schedule notification]
-  ///
-  /// ``` dart
-  /// NotificationService service = getIt.get<NotificationService>();
-  /// ScheduleNotification scheduleNotification =
-  /// ScheduleNotification(
-  ///   id: 0,
-  ///   title: 'ini titlenyaa',
-  ///   body: 'ini bodynya',
-  ///   payload: 'ini payloadnya',
-  ///   scheduledTime: DateTime.now().add(const Duration(minutes: 1)),
-  /// );
-  /// service.scheduleNotification(
-  ///     scheduleNotification: scheduleNotification);
-  /// ```
-  Future<void> scheduleNotification(
-      {required ScheduleNotification scheduleNotification});
-}
-
-class NotificationServiceImpl extends NotificationService {
+class NotificationServiceImpl extends BaseNotificationService {
   static const _channelId = "01";
   static const _channelName = "channel_01";
   static const _channelDesc = "plant sensor channel";
