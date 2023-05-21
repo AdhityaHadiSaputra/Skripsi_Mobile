@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:plant_sensors/extensions/extension.dart';
 
 import '../../../component/component.dart';
 
@@ -58,7 +59,7 @@ class InfoText extends StatelessWidget {
       return value;
     }
     String result = "Nyala";
-    if (!bool.parse(value.toLowerCase())) {
+    if (!value.parseBool()) {
       result = "Mati";
       return result;
     }

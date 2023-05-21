@@ -53,4 +53,7 @@ extension StringExtension on String {
   bool isEmpty(String? value) => (value == null || value.isEmpty);
 
   bool isNotEmpty(String? value) => (value != null && value.isNotEmpty);
+  bool parseBool() {
+    return toLowerCase() == 'true';
+  }
 }
