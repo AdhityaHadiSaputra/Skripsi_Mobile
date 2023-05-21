@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'plants.dart';
 
 // **************************************************************************
@@ -15,6 +13,9 @@ _$_Plants _$$_PlantsFromJson(Map<String, dynamic> json) => _$_Plants(
       moisturization: (json['moisturization'] as num?)?.toDouble(),
       nutrition: (json['nutrition'] as num?)?.toDouble(),
       temperature: (json['temperature'] as num?)?.toDouble(),
+      fanDuration: json['fan_duration'] as int? ?? 0,
+      waterPumpDuration: json['water_pump_duration'] as int? ?? 0,
+      nutritionPumpDuration: json['nutrition_pump_duration'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_PlantsToJson(_$_Plants instance) => <String, dynamic>{
@@ -24,4 +25,7 @@ Map<String, dynamic> _$$_PlantsToJson(_$_Plants instance) => <String, dynamic>{
       'moisturization': instance.moisturization,
       'nutrition': instance.nutrition,
       'temperature': instance.temperature,
+      'fan_duration': instance.fanDuration,
+      'water_pump_duration': instance.waterPumpDuration,
+      'nutrition_pump_duration': instance.nutritionPumpDuration,
     };

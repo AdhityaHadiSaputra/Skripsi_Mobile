@@ -14,11 +14,12 @@ class RealTimeFirebaseService {
 
   Stream<Plants> getData() {
     final transformer = StreamTransformer<DatabaseEvent, Plants>.fromHandlers(
-        handleData: (event, sink) {
-      final dataSnapshot = event.snapshot.value as Map;
-      final plants = Plants.fromJson(dataSnapshot.cast<String, dynamic>());
-      sink.add(plants);
-    });
+      handleData: (event, sink) {
+        final dataSnapshot = event.snapshot.value as Map;
+        final plants = Plants.fromJson(dataSnapshot.cast<String, dynamic>());
+        sink.add(plants);
+      },
+    );
 
     return _databaseReference.child('test').onValue.transform(transformer);
   }

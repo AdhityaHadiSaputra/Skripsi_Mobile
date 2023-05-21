@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'plants.dart';
 
@@ -26,6 +26,9 @@ mixin _$Plants {
   double? get moisturization => throw _privateConstructorUsedError;
   double? get nutrition => throw _privateConstructorUsedError;
   double? get temperature => throw _privateConstructorUsedError;
+  int? get fanDuration => throw _privateConstructorUsedError;
+  int? get waterPumpDuration => throw _privateConstructorUsedError;
+  int? get nutritionPumpDuration => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,24 +38,31 @@ mixin _$Plants {
 /// @nodoc
 abstract class $PlantsCopyWith<$Res> {
   factory $PlantsCopyWith(Plants value, $Res Function(Plants) then) =
-      _$PlantsCopyWithImpl<$Res>;
+      _$PlantsCopyWithImpl<$Res, Plants>;
+  @useResult
   $Res call(
       {bool? fan,
       bool? waterPump,
       bool? nutritionPump,
       double? moisturization,
       double? nutrition,
-      double? temperature});
+      double? temperature,
+      int? fanDuration,
+      int? waterPumpDuration,
+      int? nutritionPumpDuration});
 }
 
 /// @nodoc
-class _$PlantsCopyWithImpl<$Res> implements $PlantsCopyWith<$Res> {
+class _$PlantsCopyWithImpl<$Res, $Val extends Plants>
+    implements $PlantsCopyWith<$Res> {
   _$PlantsCopyWithImpl(this._value, this._then);
 
-  final Plants _value;
   // ignore: unused_field
-  final $Res Function(Plants) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? fan = freezed,
@@ -61,33 +71,48 @@ class _$PlantsCopyWithImpl<$Res> implements $PlantsCopyWith<$Res> {
     Object? moisturization = freezed,
     Object? nutrition = freezed,
     Object? temperature = freezed,
+    Object? fanDuration = freezed,
+    Object? waterPumpDuration = freezed,
+    Object? nutritionPumpDuration = freezed,
   }) {
     return _then(_value.copyWith(
-      fan: fan == freezed
+      fan: freezed == fan
           ? _value.fan
           : fan // ignore: cast_nullable_to_non_nullable
               as bool?,
-      waterPump: waterPump == freezed
+      waterPump: freezed == waterPump
           ? _value.waterPump
           : waterPump // ignore: cast_nullable_to_non_nullable
               as bool?,
-      nutritionPump: nutritionPump == freezed
+      nutritionPump: freezed == nutritionPump
           ? _value.nutritionPump
           : nutritionPump // ignore: cast_nullable_to_non_nullable
               as bool?,
-      moisturization: moisturization == freezed
+      moisturization: freezed == moisturization
           ? _value.moisturization
           : moisturization // ignore: cast_nullable_to_non_nullable
               as double?,
-      nutrition: nutrition == freezed
+      nutrition: freezed == nutrition
           ? _value.nutrition
           : nutrition // ignore: cast_nullable_to_non_nullable
               as double?,
-      temperature: temperature == freezed
+      temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
               as double?,
-    ));
+      fanDuration: freezed == fanDuration
+          ? _value.fanDuration
+          : fanDuration // ignore: cast_nullable_to_non_nullable
+              as int?,
+      waterPumpDuration: freezed == waterPumpDuration
+          ? _value.waterPumpDuration
+          : waterPumpDuration // ignore: cast_nullable_to_non_nullable
+              as int?,
+      nutritionPumpDuration: freezed == nutritionPumpDuration
+          ? _value.nutritionPumpDuration
+          : nutritionPumpDuration // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
   }
 }
 
@@ -96,24 +121,27 @@ abstract class _$$_PlantsCopyWith<$Res> implements $PlantsCopyWith<$Res> {
   factory _$$_PlantsCopyWith(_$_Plants value, $Res Function(_$_Plants) then) =
       __$$_PlantsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool? fan,
       bool? waterPump,
       bool? nutritionPump,
       double? moisturization,
       double? nutrition,
-      double? temperature});
+      double? temperature,
+      int? fanDuration,
+      int? waterPumpDuration,
+      int? nutritionPumpDuration});
 }
 
 /// @nodoc
-class __$$_PlantsCopyWithImpl<$Res> extends _$PlantsCopyWithImpl<$Res>
+class __$$_PlantsCopyWithImpl<$Res>
+    extends _$PlantsCopyWithImpl<$Res, _$_Plants>
     implements _$$_PlantsCopyWith<$Res> {
   __$$_PlantsCopyWithImpl(_$_Plants _value, $Res Function(_$_Plants) _then)
-      : super(_value, (v) => _then(v as _$_Plants));
+      : super(_value, _then);
 
-  @override
-  _$_Plants get _value => super._value as _$_Plants;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? fan = freezed,
@@ -122,38 +150,54 @@ class __$$_PlantsCopyWithImpl<$Res> extends _$PlantsCopyWithImpl<$Res>
     Object? moisturization = freezed,
     Object? nutrition = freezed,
     Object? temperature = freezed,
+    Object? fanDuration = freezed,
+    Object? waterPumpDuration = freezed,
+    Object? nutritionPumpDuration = freezed,
   }) {
     return _then(_$_Plants(
-      fan: fan == freezed
+      fan: freezed == fan
           ? _value.fan
           : fan // ignore: cast_nullable_to_non_nullable
               as bool?,
-      waterPump: waterPump == freezed
+      waterPump: freezed == waterPump
           ? _value.waterPump
           : waterPump // ignore: cast_nullable_to_non_nullable
               as bool?,
-      nutritionPump: nutritionPump == freezed
+      nutritionPump: freezed == nutritionPump
           ? _value.nutritionPump
           : nutritionPump // ignore: cast_nullable_to_non_nullable
               as bool?,
-      moisturization: moisturization == freezed
+      moisturization: freezed == moisturization
           ? _value.moisturization
           : moisturization // ignore: cast_nullable_to_non_nullable
               as double?,
-      nutrition: nutrition == freezed
+      nutrition: freezed == nutrition
           ? _value.nutrition
           : nutrition // ignore: cast_nullable_to_non_nullable
               as double?,
-      temperature: temperature == freezed
+      temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
               as double?,
+      fanDuration: freezed == fanDuration
+          ? _value.fanDuration
+          : fanDuration // ignore: cast_nullable_to_non_nullable
+              as int?,
+      waterPumpDuration: freezed == waterPumpDuration
+          ? _value.waterPumpDuration
+          : waterPumpDuration // ignore: cast_nullable_to_non_nullable
+              as int?,
+      nutritionPumpDuration: freezed == nutritionPumpDuration
+          ? _value.nutritionPumpDuration
+          : nutritionPumpDuration // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_Plants implements _Plants {
   const _$_Plants(
       {this.fan,
@@ -161,7 +205,10 @@ class _$_Plants implements _Plants {
       this.nutritionPump,
       this.moisturization,
       this.nutrition,
-      this.temperature});
+      this.temperature,
+      this.fanDuration = 0,
+      this.waterPumpDuration = 0,
+      this.nutritionPumpDuration = 0});
 
   factory _$_Plants.fromJson(Map<String, dynamic> json) =>
       _$$_PlantsFromJson(json);
@@ -178,10 +225,19 @@ class _$_Plants implements _Plants {
   final double? nutrition;
   @override
   final double? temperature;
+  @override
+  @JsonKey()
+  final int? fanDuration;
+  @override
+  @JsonKey()
+  final int? waterPumpDuration;
+  @override
+  @JsonKey()
+  final int? nutritionPumpDuration;
 
   @override
   String toString() {
-    return 'Plants(fan: $fan, waterPump: $waterPump, nutritionPump: $nutritionPump, moisturization: $moisturization, nutrition: $nutrition, temperature: $temperature)';
+    return 'Plants(fan: $fan, waterPump: $waterPump, nutritionPump: $nutritionPump, moisturization: $moisturization, nutrition: $nutrition, temperature: $temperature, fanDuration: $fanDuration, waterPumpDuration: $waterPumpDuration, nutritionPumpDuration: $nutritionPumpDuration)';
   }
 
   @override
@@ -189,30 +245,42 @@ class _$_Plants implements _Plants {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Plants &&
-            const DeepCollectionEquality().equals(other.fan, fan) &&
-            const DeepCollectionEquality().equals(other.waterPump, waterPump) &&
-            const DeepCollectionEquality()
-                .equals(other.nutritionPump, nutritionPump) &&
-            const DeepCollectionEquality()
-                .equals(other.moisturization, moisturization) &&
-            const DeepCollectionEquality().equals(other.nutrition, nutrition) &&
-            const DeepCollectionEquality()
-                .equals(other.temperature, temperature));
+            (identical(other.fan, fan) || other.fan == fan) &&
+            (identical(other.waterPump, waterPump) ||
+                other.waterPump == waterPump) &&
+            (identical(other.nutritionPump, nutritionPump) ||
+                other.nutritionPump == nutritionPump) &&
+            (identical(other.moisturization, moisturization) ||
+                other.moisturization == moisturization) &&
+            (identical(other.nutrition, nutrition) ||
+                other.nutrition == nutrition) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.fanDuration, fanDuration) ||
+                other.fanDuration == fanDuration) &&
+            (identical(other.waterPumpDuration, waterPumpDuration) ||
+                other.waterPumpDuration == waterPumpDuration) &&
+            (identical(other.nutritionPumpDuration, nutritionPumpDuration) ||
+                other.nutritionPumpDuration == nutritionPumpDuration));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(fan),
-      const DeepCollectionEquality().hash(waterPump),
-      const DeepCollectionEquality().hash(nutritionPump),
-      const DeepCollectionEquality().hash(moisturization),
-      const DeepCollectionEquality().hash(nutrition),
-      const DeepCollectionEquality().hash(temperature));
+      fan,
+      waterPump,
+      nutritionPump,
+      moisturization,
+      nutrition,
+      temperature,
+      fanDuration,
+      waterPumpDuration,
+      nutritionPumpDuration);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PlantsCopyWith<_$_Plants> get copyWith =>
       __$$_PlantsCopyWithImpl<_$_Plants>(this, _$identity);
 
@@ -231,7 +299,10 @@ abstract class _Plants implements Plants {
       final bool? nutritionPump,
       final double? moisturization,
       final double? nutrition,
-      final double? temperature}) = _$_Plants;
+      final double? temperature,
+      final int? fanDuration,
+      final int? waterPumpDuration,
+      final int? nutritionPumpDuration}) = _$_Plants;
 
   factory _Plants.fromJson(Map<String, dynamic> json) = _$_Plants.fromJson;
 
@@ -247,6 +318,12 @@ abstract class _Plants implements Plants {
   double? get nutrition;
   @override
   double? get temperature;
+  @override
+  int? get fanDuration;
+  @override
+  int? get waterPumpDuration;
+  @override
+  int? get nutritionPumpDuration;
   @override
   @JsonKey(ignore: true)
   _$$_PlantsCopyWith<_$_Plants> get copyWith =>

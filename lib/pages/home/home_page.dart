@@ -1,12 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../component/component.dart';
 import '../../extensions/extension.dart';
-
-import 'widgets/widgets.dart';
-
 import 'bloc/bloc.dart';
+import 'widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,7 +49,9 @@ class _HomePageState extends State<HomePage> {
                 return SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 26, vertical: 60),
+                      horizontal: 26,
+                      vertical: 60,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

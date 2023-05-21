@@ -31,16 +31,20 @@ class NotificationServiceImpl extends BaseNotificationService {
     );
     const InitializationSettings initializationSettings =
         InitializationSettings(
-            android: initializationSettingsAndroid,
-            iOS: initializationSettingsIOS);
+      android: initializationSettingsAndroid,
+      iOS: initializationSettingsIOS,
+    );
 
     //initialize the notification
-    await flutterLocalNotificationsPlugin.initialize(initializationSettings,
-        onDidReceiveNotificationResponse: _onDidReceiveNotificationResponse);
+    await flutterLocalNotificationsPlugin.initialize(
+      initializationSettings,
+      onDidReceiveNotificationResponse: _onDidReceiveNotificationResponse,
+    );
   }
 
   static void _onDidReceiveNotificationResponse(
-      NotificationResponse details) async {
+    NotificationResponse details,
+  ) async {
     String? payload = details.payload;
     if (payload != null) {
       // print('notification payload: $payload');
@@ -76,8 +80,9 @@ class NotificationServiceImpl extends BaseNotificationService {
   }
 
   @override
-  Future<void> showNotification(
-      {required ReceivedNotification receivedNotification}) async {
+  Future<void> showNotification({
+    required ReceivedNotification receivedNotification,
+  }) async {
     AndroidNotificationDetails androidPlatformChannelSpecifics =
         const AndroidNotificationDetails(
       _channelId,
@@ -105,8 +110,9 @@ class NotificationServiceImpl extends BaseNotificationService {
   }
 
   @override
-  Future<void> scheduleNotification(
-      {required ScheduleNotification scheduleNotification}) async {
+  Future<void> scheduleNotification({
+    required ScheduleNotification scheduleNotification,
+  }) async {
     AndroidNotificationDetails androidPlatformChannelSpecifics =
         const AndroidNotificationDetails(
       _channelId,

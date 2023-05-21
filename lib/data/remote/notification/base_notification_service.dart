@@ -17,8 +17,9 @@ abstract class BaseNotificationService {
   /// service.showNotification(
   ///     receivedNotification: receivedNotification);
   /// ```
-  Future<void> showNotification(
-      {required ReceivedNotification receivedNotification});
+  Future<void> showNotification({
+    required ReceivedNotification receivedNotification,
+  });
 
   /// [How to use schedule notification]
   ///
@@ -35,6 +36,7 @@ abstract class BaseNotificationService {
   /// service.scheduleNotification(
   ///     scheduleNotification: scheduleNotification);
   /// ```
-  Future<void> scheduleNotification(
-      {required ScheduleNotification scheduleNotification});
+  Future<void> scheduleNotification({
+    required ScheduleNotification scheduleNotification,
+  });
 }

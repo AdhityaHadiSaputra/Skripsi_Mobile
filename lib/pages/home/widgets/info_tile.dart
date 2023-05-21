@@ -6,6 +6,7 @@ import 'widgets.dart';
 class InfoTile extends StatelessWidget {
   final Image icon;
   final String name;
+  final String? lastOn;
   final String value;
   final bool isEnabled;
   const InfoTile({
@@ -14,6 +15,7 @@ class InfoTile extends StatelessWidget {
     required this.name,
     required this.value,
     this.isEnabled = false,
+    this.lastOn,
   });
 
   @override
@@ -36,6 +38,7 @@ class InfoTile extends StatelessWidget {
             InfoText(
               name: name,
               value: value,
+              lastOn: lastOn,
               isEnabled: isEnabled,
             ),
           ],

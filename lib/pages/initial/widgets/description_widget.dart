@@ -27,7 +27,6 @@ class _DescriptionWidgetState extends State<DescriptionWidget> {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           RichText(
             textAlign: TextAlign.center,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../extensions/extension.dart';
 
+import '../../../extensions/extension.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../models/models.dart';
 import 'widgets.dart';
@@ -19,6 +19,7 @@ class Content extends StatelessWidget {
             InfoTile(
               icon: Assets.icons.iconSun.image(height: 40, width: 40),
               name: "fan",
+              lastOn: plants.fanDuration.toString(),
               value: plants.fan.toString().toCapitalized(),
               isEnabled: plants.fan ?? false,
             ),
@@ -52,6 +53,7 @@ class Content extends StatelessWidget {
             InfoTile(
               icon: Assets.icons.iconDrop.image(height: 40, width: 40),
               name: "Water Pump",
+              lastOn: plants.waterPumpDuration.toString(),
               value: plants.waterPump.toString().toCapitalized(),
               isEnabled: plants.waterPump ?? false,
             ),
@@ -59,6 +61,7 @@ class Content extends StatelessWidget {
             InfoTile(
               icon: Assets.icons.iconPlant.image(height: 40, width: 40),
               name: "Nutrition Pump",
+              lastOn: plants.nutritionPumpDuration.toString(),
               value: plants.nutritionPump.toString().toCapitalized(),
               isEnabled: plants.nutritionPump ?? false,
             ),

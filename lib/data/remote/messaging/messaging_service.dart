@@ -70,7 +70,8 @@ class FirebaseMessagingServiceImpl extends FirebaseMessagingService {
 
   void showNotification(ReceivedNotification receivedNotification) {
     _notificationService.showNotification(
-        receivedNotification: receivedNotification);
+      receivedNotification: receivedNotification,
+    );
   }
 
   @override
@@ -81,7 +82,8 @@ class FirebaseMessagingServiceImpl extends FirebaseMessagingService {
 
   @override
   Future<void> pushNotification(
-      ReceivedNotification receivedNotification) async {
+    ReceivedNotification receivedNotification,
+  ) async {
     final String? fcmToken = await getToken();
     var url = Keys.postPushNotifUrl;
     var request = {

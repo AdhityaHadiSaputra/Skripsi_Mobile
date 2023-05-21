@@ -24,11 +24,8 @@ class BaseService {
       dio.interceptors.add(
         PrettyDioLogger(
           requestHeader: true,
-          responseBody: true,
           responseHeader: true,
           requestBody: true,
-          request: true,
-          error: true,
         ),
       );
       dio.interceptors.add(CurlLoggerDioInterceptor(printOnSuccess: true));
