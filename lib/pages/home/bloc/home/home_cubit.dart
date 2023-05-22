@@ -54,7 +54,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> _handleFanDataToPushNotification(Plants event) async {
     if (event.fan.isNull) return;
-    if (event.fan == latestPlants.fan) return;
+    // if (event.fan == latestPlants.fan) return;
     if (event.fan ?? false) {
       _homeRepository.startStopwatch(fanStopwatch);
     } else {
@@ -77,7 +77,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> _handleWaterPumpDataToPushNotification(Plants event) async {
     if (event.waterPump.isNull) return;
-    if (event.waterPump == latestPlants.waterPump) return;
+    // if (event.waterPump == latestPlants.waterPump) return;
     if (event.waterPump ?? false) {
       _homeRepository.startStopwatch(waterPumpStopwatch);
     } else {
@@ -100,7 +100,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> _handleNutritionDataToPushNotification(Plants event) async {
     if (event.nutritionPump.isNull) return;
-    if (event.nutritionPump == latestPlants.nutritionPump) return;
+    // if (event.nutritionPump == latestPlants.nutritionPump) return;
     if (event.nutritionPump ?? false) {
       _homeRepository.startStopwatch(nutritionPumpStopwatch);
     } else {
@@ -127,6 +127,8 @@ class HomeCubit extends Cubit<HomeState> {
     required String title,
     required String text,
   }) async {
+    if (currentCondition == latestCondition) return;
+
     return _homeRepository.pushNotification(
       latestCondition: latestCondition,
       title: title,
